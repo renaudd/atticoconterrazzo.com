@@ -36,24 +36,22 @@
             top: 25px;
             right: 25px;
             z-index: 2000;
-            font-family: 'Outfit', sans-serif;
         }
 
         .translate-btn {
             background: rgba(13, 13, 13, 0.9);
             border: 1px solid rgba(212, 175, 55, 0.4);
             color: var(--accent-gold);
-            padding: 10px 20px;
-            border-radius: 30px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            padding: 0;
         }
 
         .lang-menu {
@@ -143,12 +141,11 @@
 
 <body>
     <div class="custom-translate">
-        <button class="translate-btn" onclick="toggleLangMenu()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <button class="translate-btn" onclick="toggleLangMenu()" title="Traduci">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path
                     d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3.6 9h16.8M3.6 15h16.8M12 3a18.2 18.2 0 0 1 3 9 18.2 18.2 0 0 1-3 9M12 3a18.2 18.2 0 0 0-3 9 18.2 18.2 0 0 0 3 9" />
             </svg>
-            <span id="current-lang">Traduci</span>
         </button>
         <div class="lang-menu" id="langMenu">
             <div class="lang-option" onclick="changeLang('it', 'Italiano')">Italiano</div>
@@ -188,6 +185,15 @@
                 raffinata che si sposa perfettamente con lo spirito della nostra dimora.</p>
         </div>
 
+        <div class="venue">
+            <span class="type">Lista "Piano B"</span>
+            <h2>Alternative di Pregio</h2>
+            <p>Se i vostri tavoli preferiti sono pieni, vi consigliamo <strong>Emma</strong> per una pizza raffinata nel Rione
+                Parione, o <strong>Piccolo Buco</strong> per una pizza dal cornicione alto vicino alla Fontana di Trevi. Se
+                cercate un'atmosfera da palazzo nobile senza la folla dei Musei Vaticani, visitate <strong>Galleria Doria
+                    Pamphilj</strong> su Via del Corso.</p>
+        </div>
+
         <a href="index.html" class="back-link">Torna alla Dimora</a>
     </div>
 
@@ -201,7 +207,6 @@
             if (select) {
                 select.value = code;
                 select.dispatchEvent(new Event('change'));
-                document.getElementById('current-lang').innerText = name;
                 document.getElementById('langMenu').classList.remove('active');
             }
         }

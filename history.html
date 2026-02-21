@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Storia del Rione | Attico con Terrazzo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="flower-logo.png">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --accent-gold: #d4af37;
+            --off-white: #f5f5f5;
+            --text-dim: #999999;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            font-family: 'Outfit', sans-serif;
+            color: var(--off-white);
+            line-height: 1.8;
+            letter-spacing: 0.01em;
+        }
+
+        /* Translation Widget */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(13, 13, 13, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        #google_translate_element {
+            display: inline-block;
+        }
+
+        .goog-te-gadget {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 0.65rem !important;
+            color: var(--accent-gold) !important;
+            text-transform: uppercase;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .goog-te-menu-value span {
+            color: var(--accent-gold) !important;
+            font-weight: 300 !important;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 60px;
+            text-align: center;
+            color: var(--off-white);
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 200;
+            color: var(--text-dim);
+            margin-bottom: 25px;
+        }
+
+        .etymology-note {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin: 60px 0;
+            font-style: italic;
+            color: var(--off-white);
+            text-align: center;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 100px;
+            text-align: center;
+            color: var(--accent-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lang-switch">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <div class="container">
+        <h1>Eredità di Regola</h1>
+
+        <div class="section">
+            <h2>L'Eredità di Ramón Gaya</h2>
+            <p>
+                Abitare l'Attico con Terrazzo significa immergersi nel silenzio che ha ispirato Ramón Gaya. In questa
+                dimora, il pittore ha trascorso anni catturando la luce di Roma, quella stessa luce che ancora oggi
+                danza tra i tetti di Regola e si posa sui nostri infissi originali del XVIII secolo.
+            </p>
+            <p>
+                Il Rione Regola è il cuore pulsante di una Roma che non vuole cambiare, un labirinto di vicoli dove ogni
+                pietra racconta una storia di artigianato, nobiltà e vita quotidiana.
+            </p>
+        </div>
+
+        <div class="etymology-note">
+            "Fleur-de-lis significa giglio in francese; Giglio significa giglio in italiano. Vicolo del Giglio deve il
+            suo nome allo stemma della Casata Farnese — un campo di gigli — il cui storico palazzo sorge a pochi passi,
+            in Piazza Farnese."
+        </div>
+
+        <div class="section">
+            <h2>L'Ombra dei Farnese</h2>
+            <p>
+                La nostra posizione, a ridosso di Piazza Farnese, ci lega indissolubilmente all'estetica rinascimentale.
+                Palazzo Farnese, capolavoro del Sangallo e di Michelangelo, domina il quartiere con la sua eleganza
+                austera, la stessa che cerchiamo di onorare nella preservazione della nostra Casa d'Artista.
+            </p>
+        </div>
+
+        <a href="index.html" class="back-link">Torna alla Terrazza</a>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'it',
+                includedLanguages: 'it,en,es,fr,de,zh-CN,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

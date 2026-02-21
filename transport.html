@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muoversi a Roma | Attico con Terrazzo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="flower-logo.png">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --accent-gold: #d4af37;
+            --off-white: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            font-family: 'Outfit', sans-serif;
+            color: var(--off-white);
+            line-height: 1.8;
+        }
+
+        /* Translation Widget */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(13, 13, 13, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        #google_translate_element {
+            display: inline-block;
+        }
+
+        .goog-te-gadget {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 0.65rem !important;
+            color: var(--accent-gold) !important;
+            text-transform: uppercase;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .goog-te-menu-value span {
+            color: var(--accent-gold) !important;
+            font-weight: 300 !important;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            text-align: center;
+            color: var(--bg-cream);
+        }
+
+        .mode {
+            margin-bottom: 60px;
+        }
+
+        .mode h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: rgba(244, 241, 234, 0.7);
+            font-weight: 200;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--accent-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lang-switch">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <div class="container">
+        <h1>Trasporti</h1>
+
+        <div class="mode">
+            <h2>A Piedi</h2>
+            <p>Regola è un centro perfetto. Tutto ciò che conta è a meno di 15 minuti di cammino: Campo de' Fiori,
+                Piazza Farnese, e il Ghetto Ebraico sono i vostri vicini di casa. Lasciate che siano i vostri passi a
+                guidarvi.</p>
+        </div>
+
+        <div class="mode">
+            <h2>Oltre il Tevere</h2>
+            <p>Attraversate Ponte Sisto e sarete a Trastevere in 5 minuti. È il passaggio ideale per una passeggiata
+                mattutina lungo il fiume o per una cena sotto le pergole del quartiere più vivace di Roma.</p>
+        </div>
+
+        <div class="mode">
+            <h2>In Auto</h2>
+            <p>Per gli spostamenti lunghi o i trasferimenti aeroportuali, consigliamo i servizi di auto privata (NCC). I
+                taxi sono disponibili nella vicina stazione di Via Arenula, a soli 4 minuti a piedi.</p>
+        </div>
+
+        <a href="index.html" class="back-link">Torna alla Terrazza</a>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'it',
+                includedLanguages: 'it,en,es,fr,de,zh-CN,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

@@ -4,44 +4,418 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attico con Terrazzo Roma</title>
+  <title>Attico con Terrazzo | Casa d'Artista in Regola</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="bluelogo.png">
   <style>
+    :root {
+      --bg-dark: #0a141d;
+      --bg-cream: #f4f1ea;
+      --text-main: #1d1d1b;
+      --text-white: #ffffff;
+      --accent-gold: #c5a059;
+    }
+
     body {
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-color: #1a2a3a;
-      /* Matching dark background from logo */
+      background-color: var(--bg-dark);
       font-family: 'Outfit', sans-serif;
-      color: white;
+      color: var(--text-white);
+      overflow-x: hidden;
     }
 
     .container {
       text-align: center;
-      padding: 20px;
+      padding: 60px 40px;
+      max-width: 900px;
+      width: 100%;
     }
 
-    img {
+    .logo-container img {
       max-width: 100%;
       height: auto;
-      max-height: 80vh;
-      border-radius: 4px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      max-height: 30vh;
+      margin-bottom: 60px;
+      opacity: 0.95;
+      transition: opacity 0.4s ease;
     }
 
-    img:hover {
-      transform: scale(1.02);
+    .logo-container img:hover {
+      opacity: 1;
+    }
+
+    /* Countdown Styles */
+    .countdown-container {
+      margin-bottom: 60px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .countdown-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      margin-bottom: 30px;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .time-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .time-value {
+      font-size: 2.5rem;
+      font-weight: 200;
+      line-height: 1;
+      color: var(--bg-cream);
+    }
+
+    .time-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgba(244, 241, 234, 0.4);
+      margin-top: 12px;
+    }
+
+    /* Action Section */
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .btn-icon {
+      width: 18px;
+      height: 18px;
+      margin-right: 12px;
+      vertical-align: middle;
+      opacity: 0.8;
+    }
+
+    .btn-learn-more {
+      background: transparent;
+      border: 1px solid rgba(244, 241, 234, 0.3);
+      color: var(--bg-cream);
+      padding: 16px 50px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-learn-more:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      letter-spacing: 5px;
+    }
+
+    /* Expanded Content */
+    .info-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .info-panel::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+      background: url('bluelogo.png') no-repeat center;
+      background-size: contain;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .info-panel.visible {
+      max-height: 1200px;
+      border-top: 1px solid rgba(244, 241, 234, 0.1);
+      padding-top: 60px;
+    }
+
+    .property-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      text-align: left;
+    }
+
+    .property-intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: var(--bg-cream);
+      line-height: 1.2;
+    }
+
+    .property-intro p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(244, 241, 234, 0.7);
+      font-weight: 300;
+      margin-bottom: 25px;
+    }
+
+    .specs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .specs-list li {
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(244, 241, 234, 0.05);
+      padding-bottom: 8px;
+    }
+
+    .specs-list li span {
+      color: var(--bg-cream);
+      font-weight: 200;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* Form Styles */
+    .signup-form {
+      grid-column: 1 / span 2;
+      max-width: 500px;
+      margin: 60px auto 0;
+      text-align: center;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      padding: 40px;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--bg-cream);
+      margin-bottom: 25px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input[type="email"] {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(244, 241, 234, 0.3);
+      padding: 12px 0;
+      color: var(--bg-cream);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      text-align: center;
+      transition: border-color 0.4s ease;
+    }
+
+    input[type="email"]:focus {
+      border-color: var(--accent-gold);
+    }
+
+    .btn-submit {
+      background: var(--accent-gold);
+      border: none;
+      color: var(--bg-dark);
+      padding: 18px 40px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      font-size: 0.75rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--bg-cream);
+      color: var(--bg-dark);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .property-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .signup-form {
+        grid-column: 1;
+      }
+
+      .timer {
+        gap: 20px;
+      }
+
+      .time-value {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <img src="logo.png" alt="Attico con Terrazzo Roma Logo">
+    <div class="logo-container">
+      <img src="logo.png" alt="Attico con Terrazzo Roma Logo">
+    </div>
+    
+    <div class="countdown-container">
+      <div class="countdown-title">Disponibile dal 1° Maggio 2026</div>
+      <div class="timer" id="timer">
+        <div class="time-box">
+          <span class="time-value" id="days">00</span>
+          <span class="time-label">Giorni</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="hours">00</span>
+          <span class="time-label">Ore</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="minutes">00</span>
+          <span class="time-label">Minuti</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="seconds">00</span>
+          <span class="time-label">Secondi</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button class="btn-learn-more" id="learnMoreBtn">
+        <img src="bluelogo.png" alt="" class="btn-icon">
+        Scopri la Dimora
+      </button>
+      <div class="info-panel" id="infoPanel">
+        <div class="property-section">
+          <div class="property-intro">
+            <h2>Un'autentica Casa d'Artista nel cuore di Regola.</h2>
+            <p>
+              Incastonato tra i tetti di uno dei rioni più antichi e veraci di Roma, Attico con Terrazzo è molto più di
+              una dimora di lusso: è una <b>Casa d'Artista</b>. Un tempo rifugio del celebre pittore Ramón Gaya, questo
+              spazio ne conserva l'anima e l'integrità architettonica.
+            </p>
+            <p>
+              Vivere qui significa respirare la storia di Regola, a pochi passi da Campo de' Fiori, circondati da
+              dettagli d'epoca come gli infissi in legno originali e una vista impareggiabile sui tetti romani.
+            </p>
+          </div>
+          <div class="property-specs">
+            <ul class="specs-list">
+              <li>Ubicazione <span>Ultimi due piani</span></li>
+              <li>Soggiorno <span>Camino a legna autentico</span></li>
+              <li>Terrazzo <span>Privato con vista panoramica</span></li>
+              <li>Comfort <span>A/C e Riscaldamento (6kW)</span></li>
+              <li>Cucina <span>Design moderno con lavastoviglie</span></li>
+              <li>Servizi <span>Lavatrice e Asciugatrice in camera</span></li>
+            </ul>
+          </div>
+          <form class="signup-form"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfD_XU5YvYm_J_7vJ_zXU_W_X_J_X_J_X_J_X_J_X_J_X/formResponse"
+            method="POST" target="_blank">
+            <div class="form-title">Registra il tuo interesse</div>
+            <div class="input-group">
+              <input type="email" name="emailAddress" placeholder="Indirizzo Email" required>
+              <button type="submit" class="btn-submit">Invia</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
+<script>
+  // Countdown Timer
+  const targetDate = new Date("May 1, 2026 00:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+    if (distance < 0) {
+      clearInterval(timerInterval);
+      document.getElementById("timer").innerHTML = "DISPONIBILE";
+    }
+  }
+
+  const timerInterval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // Learn More Toggle
+  const learnMoreBtn = document.getElementById('learnMoreBtn');
+  const infoPanel = document.getElementById('infoPanel');
+
+  learnMoreBtn.addEventListener('click', () => {
+    infoPanel.classList.toggle('visible');
+    if (infoPanel.classList.contains('visible')) {
+      learnMoreBtn.innerText = 'Chiudi';
+      setTimeout(() => {
+        infoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    } else {
+      learnMoreBtn.innerText = 'Scopri la Dimora';
+    }
+  });
+</script>
 </body>
 
 </html>

@@ -117,12 +117,20 @@
             display: block;
             margin-top: 80px;
             text-align: center;
-            color: var(--accent-gold);
+            color: var(--off-white);
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 4px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-weight: 300;
         }
+
+        .container a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 
@@ -150,22 +158,39 @@
         <h1>Trasporti</h1>
 
         <div class="mode">
-            <h2>Arrivo (Senza Stress)</h2>
-            <p>Prendete solo i <strong>Taxi Bianchi</strong> ufficiali da FCO. La tariffa è fissa a €55—confermate "Tariffa
-                fissa?" al conducente prima di partire. Se volete evitare il caos di Termini, prendete il treno FL1 fino a
-                <strong>Stazione Trastevere</strong> (€8) e poi il Tram 8 per Arenula/Cairoli: sarete a casa in un attimo.</p>
+            <h2>Arrivo dall'Aeroporto di Fiumicino (FCO)</h2>
+            <p>
+                <strong>Taxi Ufficiale:</strong> Seguite esclusivamente i cartelli per i taxi bianchi ufficiali. La tariffa è fissa
+                a **€55** per il centro storico.
+                Confermate "Tariffa fissa, cinquantacinque?" prima di salire.
+            </p>
+            <p>
+                <strong>Treno Regionale FL1:</strong> Un'ottima alternativa è il treno FL1 fino alla
+                <a href="https://www.google.com/maps/search/?api=1&query=Stazione+Trastevere+Rome" target="_blank">Stazione
+                    Trastevere</a>
+                (€8), seguito dal <strong>Tram 8</strong> (€1.50) fino alla fermata Arenula/Cairoli. Questa opzione evita la folla
+                di Termini.
+            </p>
         </div>
         <div class="mode">
-            <h2>A Piedi</h2>
-            <p>Regola è un centro perfetto. Tutto ciò che conta è a meno di 15 minuti di cammino: Campo de' Fiori,
-                Piazza Farnese, e il Ghetto Ebraico sono i vostri vicini di casa. Lasciate che siano i vostri passi a
-                guidarvi.</p>
+            <h2>Navigare il Rione a Piedi</h2>
+            <p>
+                L'Attico si trova in una posizione invidiabile. Il <strong>Pantheon</strong>,
+                <a href="https://www.google.com/maps/search/?api=1&query=Piazza+Navona+Rome" target="_blank">Piazza Navona</a>, e il
+                <a href="https://www.google.com/maps/search/?api=1&query=Jewish+Ghetto+Rome" target="_blank">Ghetto Ebraico</a>
+                sono tutti a meno di 10-15 minuti di cammino. Consigliamo scarpe eleganti ma comode per i sampietrini romani.
+            </p>
         </div>
 
         <div class="mode">
-            <h2>In Auto</h2>
-            <p>Per gli spostamenti lunghi o i trasferimenti aeroportuali, consigliamo i servizi di auto privata (NCC). I
-                taxi sono disponibili nella vicina stazione di Via Arenula, a soli 4 minuti a piedi.</p>
+            <h2>Collegamenti con Roma Termini</h2>
+            <p>
+                Il modo più rapido per raggiungere la stazione Termini è l'<strong>Autobus 40 Express</strong> da
+                <a href="https://www.google.com/maps/search/?api=1&query=Corso+Vittorio+Emanuele+II+Rome" target="_blank">Corso
+                    Vittorio Emanuele II</a>.
+                È più veloce della linea 64 e meno soggetta a ritardi. Potete pagare direttamente a bordo appoggiando la carta di
+                credito sui lettori gialli.
+            </p>
         </div>
 
         <a href="index.html" class="back-link">Torna alla Terrazza</a>
@@ -182,12 +207,15 @@
                 select.value = code;
                 select.dispatchEvent(new Event('change'));
                 document.getElementById('langMenu').classList.remove('active');
+            } else {
+                setTimeout(() => changeLang(code, name), 500);
             }
         }
 
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.custom-translate')) {
-                document.getElementById('langMenu').classList.remove('active');
+                const menu = document.getElementById('langMenu');
+                if (menu) menu.classList.remove('active');
             }
         });
     </script>

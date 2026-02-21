@@ -240,8 +240,10 @@
       font-weight: 300;
     }
 
-    .footer-nav a:hover {
-      color: var(--accent-gold);
+    .property-intro a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .property-section {
@@ -461,12 +463,12 @@
             </ul>
           </div>
           <form class="signup-form"
-            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfD_XU5YvYm_J_7vJ_zXU_W_X_J_X_J_X_J_X_J_X_J_X/formResponse"
+            action="https://docs.google.com/forms/d/e/1FAIpQLScQ7RDbTc_5TB1sr2-QiILnbRJuiCs-W_EVy1EZMazeo18lmQ/formResponse"
             method="POST" target="_blank">
             <div class="form-title">Registra il tuo interesse</div>
             <div class="input-group">
-              <input type="email" name="emailAddress" placeholder="Indirizzo Email" required>
-              <button type="submit" class="btn-submit">Invia</button>
+              <input type="email" name="entry.28567146" placeholder="Email Address" required>
+              <button type="submit" class="btn-submit">Submit</button>
             </div>
           </form>
         </div>
@@ -491,12 +493,15 @@
           select.value = code;
           select.dispatchEvent(new Event('change'));
           document.getElementById('langMenu').classList.remove('active');
+        } else {
+          setTimeout(() => changeLang(code, name), 500);
         }
       }
 
       document.addEventListener('click', (e) => {
         if (!e.target.closest('.custom-translate')) {
-          document.getElementById('langMenu').classList.remove('active');
+          const menu = document.getElementById('langMenu');
+          if (menu) menu.classList.remove('active');
         }
       });
 

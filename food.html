@@ -127,16 +127,23 @@
         }
 
         .back-link {
-            display: block;
-            margin-top: 100px;
-            text-align: center;
-            color: var(--accent-gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-        }
-    </style>
+      display: block;
+      margin-top: 80px;
+      text-align: center;
+      color: var(--off-white);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      font-weight: 300;
+    }
+
+    .container a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
+    }
+</style>
 </head>
 
 <body>
@@ -166,32 +173,52 @@
             <span class="type">Osteria Storica</span>
             <h2><a href="https://www.google.com/maps/search/?api=1&query=Da+Francesco+Rome+Piazza+del+Fico+29" target="_blank">Da
                     Francesco</a></h2>
-            <p>A pochi passi da Piazza Navona, un'istituzione per chi cerca la vera cucina romana senza fronzoli. La
-                loro amatriciana è un rito che ogni ospite dell'Attico dovrebbe onorare.</p>
+            <p>
+                A pochi passi da Piazza Navona, un'istituzione per chi cerca la vera cucina romana senza fronzoli. La loro
+                amatriciana è un rito che ogni ospite dell'Attico dovrebbe onorare.
+            </p>
         </div>
 
         <div class="venue">
-            <span class="type">Tradizione del Forno</span>
-            <h2><a href="https://www.google.com/maps/search/?api=1&query=Antico+Forno+Roscioli+Via+dei+Chiavari+34+00186+Roma+RM+Italy"
-                    target="_blank">Antico Forno Roscioli</a></h2>
-            <p>Non è solo una panetteria, è il cuore bianco di Regola. La loro pizza bianca appena sfornata, farcita con
-                mortadella profumata, è la colazione preferita di chi vive davvero il quartiere.</p>
+            <span class="type">Gastronomia d'Eccellenza</span>
+            <h2><a href="https://www.google.com/maps/search/?api=1&query=Roscioli+Salumeria+Via+dei+Giubbonari+21+Rome"
+                    target="_blank">Roscioli Salumeria</a></h2>
+            <p>
+                Un viaggio sensoriale tra i migliori ingredienti d'Italia. Roscioli è più di un ristorante; è una leggenda romana.
+                Consigliamo di prenotare con settimane di anticipo per un posto al bancone e la loro carbonara, famosa in tutto il
+                mondo.
+                Visitate anche la <strong>Roscioli Rimessa</strong> (<a
+                    href="https://www.google.com/maps/search/?api=1&query=Rimessa+Roscioli+Rome" target="_blank">Via dei
+                    Giubbonari</a>) per una degustazione di vini senza pari.
+            </p>
         </div>
 
         <div class="venue">
-            <span class="type">Cena Elegante</span>
-            <h2><a href="https://maps.app.goo.gl/g69fN5q6mNf1Rk886" target="_blank">La Rosetta</a></h2>
-            <p>Per chi cerca l'eccellenza del pesce a Roma. A due passi dal Pantheon, La Rosetta offre un'esperienza
-                raffinata che si sposa perfettamente con lo spirito della nostra dimora.</p>
+            <span class="type">Tesori del Quartiere</span>
+            <h2><a href="https://www.google.com/maps/search/?api=1&query=Ruma+Bottega+Cucina+Agricola+Rome" target="_blank">Ruma
+                    Bottega</a></h2>
+            <p>
+                Una rivisitazione moderna della cucina agricola. I loro taglieri di formaggi e l'attenzione agli ingredienti della
+                Maremma offrono un contrasto fresco e contemporaneo ai classici romani.
+                Per uno spuntino veloce e perfetto, l'<strong>Antico Forno Roscioli</strong> (<a
+                    href="https://www.google.com/maps/search/?api=1&query=Antico+Forno+Roscioli+Rome" target="_blank">Via dei
+                    Chiavari</a>)
+                serve la miglior pizza bianca della città.
+            </p>
         </div>
 
         <div class="venue">
-            <span class="type">Lista "Piano B"</span>
-            <h2>Alternative di Pregio</h2>
-            <p>Se i vostri tavoli preferiti sono pieni, vi consigliamo <strong>Emma</strong> per una pizza raffinata nel Rione
-                Parione, o <strong>Piccolo Buco</strong> per una pizza dal cornicione alto vicino alla Fontana di Trevi. Se
-                cercate un'atmosfera da palazzo nobile senza la folla dei Musei Vaticani, visitate <strong>Galleria Doria
-                    Pamphilj</strong> su Via del Corso.</p>
+            <span class="type">Aperitivo e Cocktail</span>
+            <h2><a href="https://www.google.com/maps/search/?api=1&query=Il+Vinaietto+Rome" target="_blank">Il Vinaietto</a></h2>
+            <p>
+                Scoprite <strong>Il Vinaietto</strong> (<a href="https://www.google.com/maps/search/?api=1&query=Il+Vinaietto+Rome"
+                    target="_blank">Via del Monte della Farina</a>)
+                per un'esperienza vinicola locale autentica e senza pretese. Per chi sa dove guardare, il <strong>Jerry Thomas
+                    Project</strong>
+                (<a href="https://www.google.com/maps/search/?api=1&query=The+Jerry+Thomas+Project+Rome" target="_blank">Vicolo
+                    Cellini</a>)
+                è uno speakeasy che richiede una password ma offre i cocktail più creativi della città.
+            </p>
         </div>
 
         <a href="index.html" class="back-link">Torna alla Dimora</a>
@@ -208,12 +235,15 @@
                 select.value = code;
                 select.dispatchEvent(new Event('change'));
                 document.getElementById('langMenu').classList.remove('active');
+            } else {
+                setTimeout(() => changeLang(code, name), 500);
             }
         }
 
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.custom-translate')) {
-                document.getElementById('langMenu').classList.remove('active');
+                const menu = document.getElementById('langMenu');
+                if (menu) menu.classList.remove('active');
             }
         });
     </script>

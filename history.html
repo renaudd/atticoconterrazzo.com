@@ -13,17 +13,17 @@
     <link rel="icon" type="image/png" href="flower-logo.png">
     <style>
         :root {
-            --bg-color: #0d0d0d;
-            --accent-gold: #d4af37;
-            --off-white: #f5f5f5;
-            --text-dim: #999999;
+            --bg-color: #fcfbf7;
+            --accent-gold: #c5a059;
+            --text-main: #1a1a1a;
+            --text-dim: #555555;
         }
 
         body {
             margin: 0;
             background-color: var(--bg-color);
             font-family: 'Outfit', sans-serif;
-            color: var(--off-white);
+            color: var(--text-main);
             line-height: 1.8;
             letter-spacing: 0.01em;
         }
@@ -39,8 +39,8 @@
         }
 
         .translate-btn {
-            background: rgba(13, 13, 13, 0.9);
-            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: rgba(252, 251, 247, 0.9);
+            border: 1px solid rgba(197, 160, 89, 0.4);
             color: var(--accent-gold);
             width: 40px;
             height: 40px;
@@ -59,13 +59,13 @@
             top: 100%;
             right: 0;
             margin-top: 10px;
-            background: rgba(13, 13, 13, 0.95);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(252, 251, 247, 0.95);
+            border: 1px solid rgba(197, 160, 89, 0.2);
             border-radius: 15px;
             padding: 10px 0;
             display: none;
             min-width: 160px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             backdrop-filter: blur(20px);
         }
 
@@ -73,14 +73,14 @@
 
         .lang-option {
             padding: 10px 25px;
-            color: var(--off-white);
+            color: var(--text-main);
             cursor: pointer;
             transition: all 0.2s ease;
             font-size: 0.8rem;
         }
 
         .lang-option:hover {
-            background: rgba(212, 175, 55, 0.15);
+            background: rgba(197, 160, 89, 0.15);
             color: var(--accent-gold);
         }
 
@@ -96,7 +96,7 @@
             font-weight: 400;
             margin-bottom: 60px;
             text-align: center;
-            color: var(--off-white);
+            color: var(--text-main);
         }
 
         .section {
@@ -119,12 +119,12 @@
         }
 
         .etymology-note {
-            background: rgba(212, 175, 55, 0.05);
+            background: rgba(197, 160, 89, 0.05);
             padding: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.2);
             margin: 60px 0;
             font-style: italic;
-            color: var(--off-white);
+            color: var(--text-main);
             text-align: center;
         }
 
@@ -132,7 +132,7 @@
             display: block;
             margin-top: 80px;
             text-align: center;
-            color: var(--off-white);
+            color: var(--text-main);
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.7rem;
@@ -146,6 +146,114 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        /* Trivia Styles Redesign */
+        .trivia-container {
+            background: #0a141d;
+            border: 1px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
+            color: #ffffff;
+        }
+
+        .trivia-layout-side {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .trivia-content { flex: 1; }
+
+        .trivia-image-side {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .trivia-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--accent-gold);
+        }
+
+        .trivia-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .trivia-option {
+            background: none;
+            border: none;
+            padding: 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .trivia-option:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .trivia-option.correct {
+            color: var(--accent-gold) !important;
+            font-weight: 500;
+        }
+
+        .trivia-option.incorrect-reveal {
+            color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .trivia-option.incorrect-choice {
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .trivia-feedback {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+            display: none;
+        }
+
+        .feedback-status {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .trivia-feedback p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: var(--text-dim);
+        }
+
+        .trivia-feedback p strong {
+            color: var(--accent-gold);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .trivia-options { grid-template-columns: 1fr; }
+            .trivia-container { padding: 40px 20px; }
+        }
     </style>
 </head>
 
@@ -158,13 +266,13 @@
             </svg>
         </button>
         <div class="lang-menu" id="langMenu">
-            <div class="lang-option" onclick="changeLang('it', 'Italiano')">Italiano</div>
-            <div class="lang-option" onclick="changeLang('en', 'English')">English</div>
-            <div class="lang-option" onclick="changeLang('es', 'Español')">Español</div>
-            <div class="lang-option" onclick="changeLang('fr', 'Français')">Français</div>
-            <div class="lang-option" onclick="changeLang('de', 'Deutsch')">Deutsch</div>
-            <div class="lang-option" onclick="changeLang('zh-CN', '中文')">中文</div>
-            <div class="lang-option" onclick="changeLang('ja', '日本語')">日本語</div>
+            <div class="lang-option" onclick="changeLang('it')">Italiano</div>
+            <div class="lang-option" onclick="changeLang('en')">English</div>
+            <div class="lang-option" onclick="changeLang('es')">Español</div>
+            <div class="lang-option" onclick="changeLang('fr')">Français</div>
+            <div class="lang-option" onclick="changeLang('de')">Deutsch</div>
+            <div class="lang-option" onclick="changeLang('zh-CN')">中文</div>
+            <div class="lang-option" onclick="changeLang('ja')">日本語</div>
         </div>
     </div>
     <div id="google_translate_element" style="display:none"></div>
@@ -185,10 +293,28 @@
             </p>
         </div>
 
-        <div class="etymology-note">
-            "Fleur-de-lis significa giglio in francese; Giglio significa giglio in italiano. Vicolo del Giglio deve il
-            suo nome allo stemma della Casata Farnese — un campo di gigli — il cui storico palazzo sorge a pochi passi,
-            in Piazza Farnese."
+        <div class="trivia-container">
+            <div class="trivia-layout-side">
+                <div class="trivia-content">
+                    <div class="trivia-question">Curiosità Storica</div>
+                    <p style="margin-bottom: 25px;">Cos'è un fleur-de-lis?</p>
+                    <div class="trivia-options">
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'feedback1')">Una corona</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'feedback1')">Una spada</button>
+                        <button class="trivia-option" data-correct="true"
+                            onclick="selectTriviaOption(this, true, 'feedback1')">Un giglio</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'feedback1')">Uno
+                            scettro</button>
+                    </div>
+                </div>
+                <img src="farnesefleur.png" alt="Fleur-de-lis" class="trivia-image-side">
+            </div>
+            <div class="trivia-feedback" id="feedback1">
+                <span class="feedback-status"></span>
+                <p><em>Fleur-de-lis</em> significa letteralmente "fiore di giglio" in francese.</p>
+                <p>Vicolo del Giglio prende il nome dal vicino Palazzo Farnese, poiché lo stemma della famiglia Farnese è un
+                    campo di gigli dorati.</p>
+            </div>
         </div>
 
         <div class="section">
@@ -201,6 +327,7 @@
             </p>
         </div>
 
+
         <div class="section">
             <h2>L'Ombra dei Farnese</h2>
             <p>
@@ -211,31 +338,16 @@
         </div>
 
         <a href="index.html" class="back-link">Torna alla Terrazza</a>
+        <nav class="footer-nav">
+            <a href="history.html">Storia</a>
+            <a href="food.html">Cucina</a>
+            <a href="planning.html">Pianifica</a>
+            <a href="transport.html">Trasporti</a>
+            <a href="map.html">Mappa</a>
+        </nav>
     </div>
 
-    <script>
-        function toggleLangMenu() {
-            document.getElementById('langMenu').classList.toggle('active');
-        }
-
-        function changeLang(code, name) {
-            const select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = code;
-                select.dispatchEvent(new Event('change'));
-                document.getElementById('langMenu').classList.remove('active');
-            } else {
-                setTimeout(() => changeLang(code, name), 500);
-            }
-        }
-
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.custom-translate')) {
-                const menu = document.getElementById('langMenu');
-                if (menu) menu.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({

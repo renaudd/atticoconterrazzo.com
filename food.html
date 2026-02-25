@@ -193,21 +193,22 @@
         pointer-events: auto;
         cursor: pointer;
         z-index: 1000;
+        box-shadow: none;
     }
 
     .protrusion-item.left {
-        left: -65vw;
+        left: -42.5vw; /* Exactly half of 85vw hidden */
         top: 10%;
     }
 
     .protrusion-item.right {
-        right: -65vw;
-        top: 60%;
+        right: -42.5vw; /* Exactly half of 85vw hidden */
+        top: 75%; /* Lowered to clear text and Vinaietto/Armando */
     }
 
     @media (min-width: 800px) {
-        .protrusion-item.left { left: -500px; }
-        .protrusion-item.right { right: -500px; }
+        .protrusion-item.left { left: -325px; } /* Half of 650px */
+        .protrusion-item.right { right: -325px; } /* Half of 650px */
     }
 
     .protrusion-item.expanded.left {
@@ -488,7 +489,6 @@
             </p>
         </div>
 
-        <a href="index.html" class="back-link">Torna alla Dimora</a>
         <div class="venue">
             <span class="type">Classic Roman Institution</span>
             <h2 style="font-size: 2.2rem; font-weight: 800;"><a href="https://maps.google.com/?q=Armando+al+Pantheon+Rome"
@@ -498,6 +498,8 @@
                 in advance to secure a table in this historic dining room.
             </p>
         </div>
+
+        <a href="index.html" class="back-link">Torna alla Dimora</a>
 
         <nav class="footer-nav">
             <a href="history.html">Storia</a>

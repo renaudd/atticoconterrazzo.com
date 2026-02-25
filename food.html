@@ -103,6 +103,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 120px 40px;
+            position: relative;
         }
 
         h1 {
@@ -141,6 +142,20 @@
             font-weight: 200;
         }
 
+        .venue {
+            margin-bottom: 60px;
+            transition: all 0.5s ease;
+        }
+
+        /* Prevent text overlap with protruding images */
+        .venue:nth-child(-n+4) {
+            padding-left: 10%;
+        }
+
+        .venue:nth-last-child(-n+4) {
+            padding-right: 10%;
+        }
+
         .back-link {
       display: block;
       margin-top: 80px;
@@ -157,6 +172,114 @@
       color: inherit;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    /* Protrusion Images (Scroll-Anchored) */
+    .protrusion-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1000;
+    }
+
+    .protrusion-item {
+        position: absolute;
+        width: 85vw;
+        max-width: 650px;
+        transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        pointer-events: auto;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .protrusion-item.left {
+        left: -65vw;
+        top: 10%;
+    }
+
+    .protrusion-item.right {
+        right: -65vw;
+        top: 60%;
+    }
+
+    @media (min-width: 800px) {
+        .protrusion-item.left { left: -500px; }
+        .protrusion-item.right { right: -500px; }
+    }
+
+    .protrusion-item.expanded.left {
+        left: 0;
+    }
+
+    .protrusion-item.expanded.right {
+        right: 0;
+    }
+
+    .protrusion-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        box-shadow: none;
+        border: none;
+    }
+
+    .protrusion-item.left img {
+        border-radius: 0;
+    }
+
+    .protrusion-item.right img {
+        border-radius: 0;
+        transform: rotate(90deg);
+    }
+
+    .protrusion-explainer {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(10, 20, 29, 0.95);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        width: 250px;
+        text-align: center;
+        border: 1px solid var(--accent-gold);
+        line-height: 1.4;
+        pointer-events: none;
+    }
+
+    .protrusion-item.expanded .protrusion-explainer {
+        opacity: 1;
+    }
+
+    .protrusion-explainer strong {
+        display: block;
+        color: var(--accent-gold);
+        margin-bottom: 5px;
+        font-size: 0.85rem;
+    }
+
+    .branding-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .branding-logo {
+        max-width: 120px;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    .branding-logo:hover {
+        opacity: 1;
     }
 
     .footer-nav {
@@ -296,7 +419,22 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
+        <div class="branding-header">
+            <a href="index.html">
+                <img src="goldlogo.png" alt="Attico con Terrazzo" class="branding-logo">
+            </a>
+        </div>
         <h1>Sapori di Roma</h1>
+
+        <div class="venue">
+            <span class="type">Contemporary Neapolitan Pizza</span>
+            <h2 style="font-size: 2.2rem; font-weight: 800;"><a href="https://maps.google.com/?q=Piccolo+Buco+Rome"
+                    target="_blank">Piccolo Buco</a></h2>
+            <p>
+                Just a few steps from the Trevi Fountain, this tiny spot serves some of the most innovative pizza in the city.
+                Expect long lines, but the "canotto" style crust is worth every minute of the wait.
+            </p>
+        </div>
 
         <div class="venue">
             <span class="type">Osteria Storica</span>
@@ -351,6 +489,16 @@
         </div>
 
         <a href="index.html" class="back-link">Torna alla Dimora</a>
+        <div class="venue">
+            <span class="type">Classic Roman Institution</span>
+            <h2 style="font-size: 2.2rem; font-weight: 800;"><a href="https://maps.google.com/?q=Armando+al+Pantheon+Rome"
+                    target="_blank">Armando al Pantheon</a></h2>
+            <p>
+                A legendary family-run restaurant near the Pantheon. Their Rigatoni all'Amatriciana is legendary. Book well
+                in advance to secure a table in this historic dining room.
+            </p>
+        </div>
+
         <nav class="footer-nav">
             <a href="history.html">Storia</a>
             <a href="food.html">Cucina</a>
@@ -358,6 +506,22 @@
             <a href="transport.html">Trasporti</a>
             <a href="map.html">Mappa</a>
         </nav>
+        <div class="protrusion-container">
+            <div class="protrusion-item left" onclick="this.classList.toggle('expanded')">
+                <img src="yellowspicesalami.png" alt="Yellow Spice Salami Pizza">
+                <div class="protrusion-explainer">
+                    <strong>Yellow Spice Salami Pizza</strong>
+                    Piccolo Buco
+                </div>
+            </div>
+            <div class="protrusion-item right" onclick="this.classList.toggle('expanded')">
+                <img src="amatriciana.png" alt="Rigatoni all'Amatriciana">
+                <div class="protrusion-explainer">
+                    <strong>Rigatoni all'Amatriciana</strong>
+                    Armando al Pantheon
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>

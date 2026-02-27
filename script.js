@@ -158,7 +158,8 @@ function selectTriviaOption(btn, isCorrect, feedbackId) {
     // Update feedback status text
     if (feedbackStatus) {
         feedbackStatus.innerText = isCorrect ? 'Corretto!' : 'Non proprio.';
-        feedbackStatus.style.color = isCorrect ? '#0a141d' : '#888';
+        feedbackStatus.style.color = '#0a141d';
+        feedbackStatus.style.fontWeight = 'bold';
     }
 
     // Show feedback

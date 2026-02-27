@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="flower-logo.png">
+    <link rel="icon" type="image/png" href="redpetalsredpistils.png">
     <style>
         :root {
             --bg-color: #fcfbf7;
@@ -34,9 +34,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('goldlogoplusspace.png'), url('goldlogoplusspace.png');
-            background-position: 0 0, 110px 110px;
-            background-size: 220px 220px;
+            background-image: url('redpetalsredpistils.png'), url('redpetalsredpistils.png');
+            background-position: 0 0, 100px 100px;
+            background-size: 200px 200px;
             opacity: 0.04;
             pointer-events: none;
             z-index: -1;
@@ -145,6 +145,114 @@
             color: inherit;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        /* Trivia Styles */
+        .trivia-container {
+            background: #0a141d;
+            border: 1px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 600px;
+            color: #ffffff;
+        }
+
+        .trivia-layout-side {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .trivia-content { flex: 1; }
+
+        .trivia-image-side {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .trivia-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--accent-gold);
+        }
+
+        .trivia-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .trivia-option {
+            background: none;
+            border: none;
+            padding: 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .trivia-option:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .trivia-option.correct {
+            color: #ffffff !important;
+            font-weight: bold;
+        }
+
+        .trivia-option.incorrect-reveal {
+            color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .trivia-option.incorrect-choice {
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .trivia-feedback {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+            display: none;
+        }
+
+        .feedback-status {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            color: #000000;
+        }
+
+        .trivia-feedback p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .trivia-layout-side {
+                flex-direction: column;
+                text-align: center;
+            }
+            .trivia-image-side {
+                order: -1;
+            }
+            .trivia-options {
+                align-items: center;
+            }
         }
 
         .footer-nav {
@@ -284,62 +392,91 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
-        <div class="branding-header">
+        <div class="branding-header" style="text-align: center; margin-bottom: 30px;">
             <a href="index.html">
-                <img src="goldlogo.png" alt="Attico con Terrazzo" class="branding-logo">
+                <img src="redpetalsredpistils.png" alt="Attico con Terrazzo" class="branding-logo" style="width: 100px;">
             </a>
         </div>
         <h1>Pianificazione</h1>
 
-        <div class="itinerary-section">
-            <div class="day-block">
-                <h3>Day 1: Arrival & Orientation</h3>
-                <ul class="timetable">
-                    <li><span class="time">Morning</span> <span class="activity">Arrival at FCO. Take official white taxi (€55
-                            fixed fare).</span></li>
-                    <li><span class="time">3:00 PM</span> <span class="activity">Visit "Welcome to Rome" Exhibit (Corso
-                            Vittorio). 30-min immersive 3D experience.</span></li>
-                    <li><span class="time">8:00 PM</span> <span class="activity">Dinner at Seu Pizza Illuminati (Trastevere).
-                            Book 3 weeks in advance.</span></li>
-                </ul>
+        <div class="trivia-container">
+            <div class="trivia-layout-side">
+                <div class="trivia-content">
+                    <div class="trivia-question">Curiosità Storica</div>
+                    <p style="margin-bottom: 25px;">Cosa significa il nome Italia?</p>
+                    <div class="trivia-options">
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'italy-feedback')">A) La Terra
+                            dei Latini</button>
+                        <button class="trivia-option" data-correct="true"
+                            onclick="selectTriviaOption(this, true, 'italy-feedback')">B) La Terra dei Vitelli</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'italy-feedback')">C) La Terra di
+                            Itys Alys</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'italy-feedback')">D) La Terra di
+                            Italo</button>
+                    </div>
+                </div>
+                <div class="trivia-image-side">
+                    <img src="italycutout.png" alt="Italy Trivia" style="width: 100%; border-radius: 10px;">
+                </div>
             </div>
-        
-            <div class="day-block">
-                <h3>Day 2: The Ancient Core</h3>
-                <ul class="timetable">
-                    <li><span class="time">8:30 AM</span> <span class="activity">Colosseum "Full Experience" tour. Beat the sun
-                            and crowds.</span></li>
-                    <li><span class="time">12:30 PM</span> <span class="activity">Quick lunch: Porchetta Sandwich at Pane &
-                            Vino. Eat standing up like a Roman.</span></li>
-                    <li><span class="time">2:00 PM</span> <span class="activity">Explore the Roman Forum. Exit near Capitoline
-                            Hill for the best view.</span></li>
-                    <li><span class="time">6:00 PM</span> <span class="activity">Aperitivo at Roscioli Salumeria. Stand at the
-                            counter for wine and burrata.</span></li>
-                </ul>
-            </div>
-        
-            <div class="day-block">
-                <h3>Day 3: The Holy & The Hip</h3>
-                <ul class="timetable">
-                    <li><span class="time">8:00 AM</span> <span class="activity">Vatican Museums (Early slot). Run to the
-                            Sistine Chapel to see it empty.</span></li>
-                    <li><span class="time">1:00 PM</span> <span class="activity">Lunch at Be.Re. + Trapizzino. Try the oxtail or
-                            meatballs stuffing.</span></li>
-                    <li><span class="time">3:30 PM</span> <span class="activity">Castel Sant'Angelo fort and rooftop
-                            views.</span></li>
-                    <li><span class="time">8:30 PM</span> <span class="activity">Dinner at Felice a Testaccio. Order the
-                            legendary Cacio e Pepe.</span></li>
-                </ul>
+            <div class="trivia-feedback" id="italy-feedback">
+                <span class="feedback-status"></span>
+                <p>Risposta: <strong>B - La terra dei vitelli</strong> ("víteliú", "vitulus" -> "vitella").</p>
+                <p>Il nome Italia originariamente si applicava solo alla punta meridionale della penisola (l'odierna Calabria).
+                    Fu solo durante l'espansione romana che il termine si estese a comprendere l'intera penisola fino alle Alpi.
+                </p>
             </div>
         </div>
-        
-        <div class="practical-note">
-            <p>
-                Our building was constructed in 1800. Therefore there are no elevators to reach Attico con Terrazzo on the third
-                and
-                fourth piani (4th and 5th floors for Americans). Please make sure all guests are able to handle four flights of
-                stairs before booking.
-            </p>
+
+        <div class="trivia-container">
+            <div class="trivia-layout-side">
+                <div class="trivia-content">
+                    <div class="trivia-question">Curiosità Geografica</div>
+                    <p style="margin-bottom: 25px;">Su quanti colli è stata originariamente costruita Roma?</p>
+                    <div class="trivia-options">
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'hills-feedback')">A) 3</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'hills-feedback')">B) 5</button>
+                        <button class="trivia-option" data-correct="true"
+                            onclick="selectTriviaOption(this, true, 'hills-feedback')">C) 7</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'hills-feedback')">D) 9</button>
+                    </div>
+                </div>
+                <!-- No image for this one to keep it balanced, or use small icon if needed -->
+            </div>
+            <div class="trivia-feedback" id="hills-feedback">
+                <span class="feedback-status"></span>
+                <p>Risposta: <strong>C - 7 colli</strong>.</p>
+                <p>I sette colli di Roma a est del Tevere formano il cuore geografico di Roma. Furono il luogo del primo
+                    insediamento della città antica.</p>
+            </div>
+        </div>
+
+        <div class="trivia-container">
+            <div class="trivia-layout-side">
+                <div class="trivia-content">
+                    <div class="trivia-question">Curiosità Architettonica</div>
+                    <p style="margin-bottom: 25px;">Quale ponte rinascimentale collega Regola a Trastevere?</p>
+                    <div class="trivia-options">
+                        <button class="trivia-option" data-correct="true"
+                            onclick="selectTriviaOption(this, true, 'bridge-feedback')">A) Ponte Sisto</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">B) Ponte
+                            Garibaldi</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">C) Ponte
+                            Mazzini</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">D) Ponte
+                            Cestio</button>
+                    </div>
+                </div>
+                <div class="trivia-image-side">
+                    <img src="farnesefleur.png" alt="Ponte Sisto" style="width: 100%; border-radius: 10px;">
+                </div>
+            </div>
+            <div class="trivia-feedback" id="bridge-feedback">
+                <span class="feedback-status"></span>
+                <p>Risposta: <strong>A - Ponte Sisto</strong>.</p>
+                <p>Costruito per volere di Papa Sisto IV per il Giubileo del 1475, è uno dei ponti più iconici e fotografati di
+                    Roma.</p>
+            </div>
         </div>
 
         <div class="tip">
@@ -367,7 +504,8 @@
                 <strong>Giorno 1:</strong> Roma Antica. <strong>Colosseo</strong> e <strong><a
                         href="https://colosseo.it/en/tickets/24h-colosseum-roman-forum-and-palatine/" target="_blank">Foro</a></strong>
                 al mattino,
-                pomeriggio nel <strong><a href="https://maps.app.goo.gl/t7J5avqJKTHFqsVf8" target="_blank">Ghetto Ebraico</a></strong> e
+                pomeriggio nel <strong><a href="https://www.google.com/maps/search/?api=1&query=Ghetto+Ebraico+Rome"
+                        target="_blank">Ghetto Ebraico</a></strong> e
                 relax all'<strong><a href="http://www.acquamadre.it/" target="_blank">AquaMadre Hammam</a></strong>.
             </p>
             <p>
@@ -382,7 +520,8 @@
                 <strong>Giorno 3:</strong> Capolavori. Mattina alla <strong>Galleria Borghese</strong>
                 (<a href="https://www.google.com/maps/search/?api=1&query=Galleria+Borghese+Rome" target="_blank">Villa
                     Borghese</a>),
-                seguita da una passeggiata elegante in <strong><a href="https://maps.app.goo.gl/NLC6hW4pDcH8HDXn8" target="_blank">Via
+                seguita da una passeggiata elegante in <strong><a
+                        href="https://www.google.com/maps/search/?api=1&query=Via+dei+Condotti+Rome" target="_blank">Via
                         dei Condotti</a></strong>.
             </p>
         </div>
@@ -391,7 +530,7 @@
             <h2>L'Evasore (4-5 Giorni)</h2>
             <p>
                 Fuggite dal rumore della città con un giro in e-bike sull'<strong>Appia Antica</strong>
-                (<a href="https://maps.app.goo.gl/VPXgxyvRSmd88yfR9" target="_blank">Centro
+                (<a href="https://www.google.com/maps/search/?api=1&query=Appia+Antica+Service+Center+Rome" target="_blank">Centro
                     Servizi</a>).
                 Visitate le <strong><a href="https://www.museiitaliani.it/musei/c763f66b-8295-4800-a92d-b96a26659396"
                         target="_blank">Terme di Caracalla</a></strong> e concludete il soggiorno con una cena d'addio da

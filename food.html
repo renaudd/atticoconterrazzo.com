@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="flower-logo.png">
+    <link rel="icon" type="image/png" href="redpetalsredpistils.png">
     <style>
         :root {
             --bg-color: #fcfbf7;
@@ -34,9 +34,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('goldlogoplusspace.png'), url('goldlogoplusspace.png');
-            background-position: 0 0, 110px 110px;
-            background-size: 220px 220px;
+            background-image: url('redpetalsredpistils.png'), url('redpetalsredpistils.png');
+            background-position: 0 0, 100px 100px;
+            background-size: 200px 200px;
             opacity: 0.04;
             pointer-events: none;
             z-index: -1;
@@ -118,6 +118,7 @@
             margin-bottom: 60px;
             border-bottom: 1px solid rgba(197, 160, 89, 0.1);
             padding-bottom: 40px;
+            transition: all 0.5s ease;
         }
 
         .venue h2 {
@@ -142,11 +143,6 @@
             font-weight: 200;
         }
 
-        .venue {
-            margin-bottom: 60px;
-            transition: all 0.5s ease;
-        }
-
         /* Prevent text overlap with protruding images */
         .venue:nth-child(-n+4) {
             padding-left: 10%;
@@ -157,160 +153,159 @@
         }
 
         .back-link {
-      display: block;
-      margin-top: 80px;
-      text-align: center;
-      color: var(--text-main);
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      font-weight: 300;
-    }
+            display: block;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-main);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
 
-    .container a {
-      color: inherit;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .container a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    /* Protrusion Images (Viewport-Relative) */
-    .protrusion-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1000;
-        overflow-x: hidden; /* Prevent horizontal scroll from hidden images */
-    }
+        /* Protrusion Images (Viewport-Relative) */
+        .protrusion-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow-x: hidden; /* Prevent horizontal scroll from hidden images */
+        }
 
-    .protrusion-item {
-        position: absolute;
-        width: 85vw;
-        max-width: 650px;
-        transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-        pointer-events: auto;
-        cursor: pointer;
-        z-index: 1000;
-        box-shadow: none;
-    }
+        .protrusion-item {
+            position: absolute;
+            width: 85vw;
+            max-width: 650px;
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            pointer-events: auto;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: none;
+        }
 
-    .protrusion-item.left {
-        left: 0;
-        top: 11%;
-        transform: translateX(-75%); /* 25% exposure */
-    }
+        .protrusion-item.left {
+            left: 0;
+            top: 11%;
+            transform: translateX(-75%); /* 25% exposure */
+        }
 
-    .protrusion-item.right {
-        right: 0;
-        top: 62%; /* Higher, closer to Armando */
-        transform: translateX(85%); /* 15% exposure */
-    }
+        .protrusion-item.right {
+            right: 0;
+            top: 62%; /* Higher, closer to Armando */
+            transform: translateX(85%); /* 15% exposure */
+        }
 
-    @media (min-width: 800px) {
-        .protrusion-item { width: 650px; }
-    }
+        @media (min-width: 800px) {
+            .protrusion-item { width: 650px; }
+        }
 
-    .protrusion-item.expanded.left {
-        transform: translateX(0);
-    }
+        .protrusion-item.expanded.left {
+            transform: translateX(0);
+        }
 
-    .protrusion-item.expanded.right {
-        transform: translateX(0);
-    }
+        .protrusion-item.expanded.right {
+            transform: translateX(0);
+        }
 
-    .protrusion-item img {
-        width: 100%;
-        height: auto;
-        display: block;
-        box-shadow: none;
-        border: none;
-    }
+        .protrusion-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: none;
+            border: none;
+        }
 
-    .protrusion-item.left img {
-        border-radius: 0;
-    }
+        .protrusion-item.left img {
+            border-radius: 0;
+        }
 
-    .protrusion-item.right img {
-        border-radius: 0;
-        transform: rotate(90deg);
-        transform-origin: center;
-    }
+        .protrusion-item.right img {
+            border-radius: 0;
+            transform: rotate(90deg);
+            transform-origin: center;
+        }
 
-    .protrusion-explainer {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(10, 20, 29, 0.95);
-        color: white;
-        padding: 15px 25px;
-        border-radius: 10px;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        width: 250px;
-        text-align: center;
-        border: 1px solid var(--accent-gold);
-        line-height: 1.4;
-        pointer-events: none;
-    }
+        .protrusion-explainer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 20, 29, 0.95);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            width: 250px;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+            line-height: 1.4;
+            pointer-events: none;
+        }
 
-    .protrusion-item.expanded .protrusion-explainer {
-        opacity: 1;
-    }
+        .protrusion-item.expanded .protrusion-explainer {
+            opacity: 1;
+        }
 
-    .protrusion-explainer strong {
-        display: block;
-        color: var(--accent-gold);
-        margin-bottom: 5px;
-        font-size: 0.85rem;
-    }
+        .protrusion-explainer strong {
+            display: block;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+        }
 
-    .branding-header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+        .branding-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    .branding-logo {
-        max-width: 120px;
-        opacity: 0.8;
-        transition: opacity 0.3s ease;
-    }
+        .branding-logo {
+            width: 160px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
 
-    .branding-logo:hover {
-        opacity: 1;
-    }
+        .branding-logo:hover {
+            opacity: 1;
+        }
 
-    .footer-nav {
-      margin-top: 80px;
-      padding: 40px 0;
-      border-top: 1px solid rgba(197, 160, 89, 0.1);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+        .footer-nav {
+            margin-top: 80px;
+            padding: 40px 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
 
-    .footer-nav a {
-      color: var(--text-dim);
-      text-decoration: none;
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
+        .footer-nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
 
-    .footer-nav a:hover {
-      color: var(--accent-gold);
-    }
+        .footer-nav a:hover {
+            color: var(--accent-gold);
+        }
 
-        
         /* Cookie Consent Banner */
         .cookie-banner {
             position: fixed;
@@ -331,7 +326,11 @@
             text-transform: none;
             letter-spacing: 0;
         }
-        .cookie-banner.visible { bottom: 40px; }
+
+        .cookie-banner.visible {
+            bottom: 40px;
+        }
+
         .cookie-banner p {
             margin: 0 0 20px 0;
             font-size: 0.85rem;
@@ -339,7 +338,13 @@
             line-height: 1.6;
             font-family: 'Outfit', sans-serif;
         }
-        .cookie-actions { display: flex; justify-content: center; gap: 15px; }
+
+        .cookie-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
         .cookie-btn {
             background: transparent;
             border: 1px solid #c5a059;
@@ -353,41 +358,15 @@
             transition: all 0.3s ease;
             border-radius: 5px;
         }
-        .cookie-btn.accept { background: #c5a059; color: #0a141d; }
-        .cookie-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
 
-        /* Info Panel Contrast & Watermark Fix */
-        .info-panel.visible {
-            background-color: #0a141d !important;
-            color: #ffffff !important;
-            padding: 60px 40px !important;
-            margin-left: -40px !important;
-            margin-right: -40px !important;
-            border-radius: 0 !important;
-            border-top: 1px solid rgba(197, 160, 89, 0.2) !important;
-            isolation: isolate !important;
+        .cookie-btn.accept {
+            background: #c5a059;
+            color: #0a141d;
         }
-        .info-panel.visible::before {
-            opacity: 0.08 !important;
-            z-index: -1 !important;
-        }
-        .info-panel.visible h1, .info-panel.visible h2, .info-panel.visible h3, 
-        .info-panel.visible p, .info-panel.visible li, .info-panel.visible span,
-        .info-panel.visible .feature-card h3, .info-panel.visible .feature-card p,
-        .info-panel.visible .form-title {
-            color: #ffffff !important;
-        }
-        .info-panel.visible .feature-card {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border-color: rgba(197, 160, 89, 0.2) !important;
-        }
-        .info-panel.visible input[type="email"] {
-            border-bottom-color: #ffffff !important;
-            color: #ffffff !important;
-        }
-        .info-panel.visible .btn-submit {
-            background: #c5a059 !important;
-            color: #0a141d !important;
+
+        .cookie-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
         }
 
     </style>
@@ -396,10 +375,11 @@
 <body>
 
     <div id="cookie-consent" class="cookie-banner">
-        <p>This site uses cookies to remember your language preference and improve your experience. By continuing to use the site, you agree to our use of cookies.</p>
+        <p>Questo sito utilizza i cookie per ricordare la tua preferenza linguistica e migliorare la tua esperienza.
+            Continuando a utilizzare il sito, accetti il nostro utilizzo dei cookie.</p>
         <div class="cookie-actions">
-            <button onclick="acceptCookies()" class="cookie-btn accept">Accept</button>
-            <button onclick="declineCookies()" class="cookie-btn">Decline</button>
+            <button onclick="acceptCookies()" class="cookie-btn accept">Accetta</button>
+            <button onclick="declineCookies()" class="cookie-btn">Declina</button>
         </div>
     </div>
 
@@ -425,18 +405,18 @@
     <div class="container">
         <div class="branding-header">
             <a href="index.html">
-                <img src="goldlogo.png" alt="Attico con Terrazzo" class="branding-logo">
+                <img src="redpetalsredpistils.png" alt="Attico con Terrazzo" class="branding-logo">
             </a>
         </div>
         <h1>Sapori di Roma</h1>
 
         <div class="venue">
-            <span class="type">Contemporary Neapolitan Pizza</span>
+            <span class="type">Pizza Napoletana Contemporanea</span>
             <h2 style="font-size: 2.2rem; font-weight: 800;"><a href="https://maps.google.com/?q=Piccolo+Buco+Rome"
                     target="_blank">Piccolo Buco</a></h2>
             <p>
-                Just a few steps from the Trevi Fountain, this tiny spot serves some of the most innovative pizza in the city.
-                Expect long lines, but the "canotto" style crust is worth every minute of the wait.
+                A pochi passi dalla Fontana di Trevi, questo piccolo locale serve alcune delle pizze più innovative della città.
+                Aspettatevi lunghe code, ma il cornicione in stile "canotto" vale ogni minuto di attesa.
             </p>
         </div>
 
@@ -457,10 +437,9 @@
             <p>
                 Un viaggio sensoriale tra i migliori ingredienti d'Italia. Roscioli è più di un ristorante; è una leggenda romana.
                 Consigliamo di prenotare con settimane di anticipo per un posto al bancone e la loro carbonara, famosa in tutto il
-                mondo.
-                Visitate anche la <strong>Roscioli Rimessa</strong> (<a
-                    href="https://www.google.com/maps/search/?api=1&query=Rimessa+Roscioli+Rome" target="_blank">Via dei
-                    Giubbonari</a>) per una degustazione di vini senza pari.
+                mondo. Visitate anche la <strong>Roscioli Rimessa</strong> (<a
+                    href="https://www.google.com/maps/search/?api=1&query=Rimessa+Roscioli+Rome" target="_blank">Via dei Giubbonari</a>)
+                per una degustazione di vini senza pari.
             </p>
         </div>
 
@@ -470,8 +449,8 @@
                     Bottega</a></h2>
             <p>
                 Una rivisitazione moderna della cucina agricola. I loro taglieri di formaggi e l'attenzione agli ingredienti della
-                Maremma offrono un contrasto fresco e contemporaneo ai classici romani.
-                Per uno spuntino veloce e perfetto, l'<strong>Antico Forno Roscioli</strong> (<a
+                Maremma offrono un contrasto fresco e contemporaneo ai classici romani. Per uno spuntino veloce e perfetto,
+                l'<strong>Antico Forno Roscioli</strong> (<a
                     href="https://www.google.com/maps/search/?api=1&query=Antico+Forno+Roscioli+Rome" target="_blank">Via dei
                     Chiavari</a>)
                 serve la miglior pizza bianca della città.
@@ -480,25 +459,25 @@
 
         <div class="venue">
             <span class="type">Aperitivo e Cocktail</span>
-            <h2><a href="https://www.google.com/maps/search/?api=1&query=Il+Vinaietto+Rome" target="_blank">Il Vinaietto</a></h2>
+            <h2><a href="https://www.google.com/maps/search/?api=1&query=Il+Vinaietto+Rome" target="_blank">Il Vinaietto</a>
+            </h2>
             <p>
                 Scoprite <strong>Il Vinaietto</strong> (<a href="https://www.google.com/maps/search/?api=1&query=Il+Vinaietto+Rome"
                     target="_blank">Via del Monte della Farina</a>)
-                per un'esperienza vinicola locale autentica e senza pretese. Per chi sa dove guardare, il <strong>Jerry Thomas
-                    Project</strong>
-                (<a href="https://www.google.com/maps/search/?api=1&query=The+Jerry+Thomas+Project+Rome" target="_blank">Vicolo
-                    Cellini</a>)
-                è uno speakeasy che richiede una password ma offre i cocktail più creativi della città.
+                per un'esperienza vinicola locale autentica e senza pretese. Per chi sa dove guardare, il <strong>Jerry
+                    Thomas Project</strong> (<a href="https://www.google.com/maps/search/?api=1&query=The+Jerry+Thomas+Project+Rome"
+                    target="_blank">Vicolo Cellini</a>) è uno speakeasy che richiede una password ma offre i cocktail più creativi della
+                città.
             </p>
         </div>
 
         <div class="venue">
-            <span class="type">Classic Roman Institution</span>
+            <span class="type">Classica Istituzione Romana</span>
             <h2 style="font-size: 2.2rem; font-weight: 800;"><a href="https://maps.google.com/?q=Armando+al+Pantheon+Rome"
                     target="_blank">Armando al Pantheon</a></h2>
             <p>
-                A legendary family-run restaurant near the Pantheon. Their Rigatoni all'Amatriciana is legendary. Book well
-                in advance to secure a table in this historic dining room.
+                Un leggendario ristorante a conduzione familiare vicino al Pantheon. I loro Rigatoni all'Amatriciana sono leggendari.
+                Prenotate con largo anticipo per assicurarvi un tavolo in questa storica sala da pranzo.
             </p>
         </div>
 
@@ -515,9 +494,9 @@
 
     <div class="protrusion-container">
         <div class="protrusion-item left" onclick="this.classList.toggle('expanded')">
-            <img src="yellowspicesalami.png" alt="Yellow Spice Salami Pizza">
+            <img src="yellowspicesalami.png" alt="Pizza al Salame e Spezie Gialle">
             <div class="protrusion-explainer">
-                <strong>Yellow Spice Salami Pizza</strong>
+                <strong>Pizza al Salame e Spezie Gialle</strong>
                 Piccolo Buco
             </div>
         </div>

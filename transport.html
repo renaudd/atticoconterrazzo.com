@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="flower-logo.png">
+    <link rel="icon" type="image/png" href="redpetalsredpistils.png">
     <style>
         :root {
             --bg-color: #fcfbf7;
@@ -35,9 +35,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('goldlogoplusspace.png'), url('goldlogoplusspace.png');
-            background-position: 0 0, 110px 110px;
-            background-size: 220px 220px;
+            background-image: url('redpetalsredpistils.png'), url('redpetalsredpistils.png');
+            background-position: 0 0, 100px 100px;
+            background-size: 200px 200px;
             opacity: 0.04;
             pointer-events: none;
             z-index: -1;
@@ -110,7 +110,7 @@
             font-size: 3rem;
             margin-bottom: 60px;
             text-align: center;
-            color: var(--bg-cream);
+            color: var(--text-main);
         }
 
         .mode {
@@ -150,20 +150,20 @@
 
         /* Trivia Styles Redesign */
         .trivia-container {
-            background: #0a141d;
+            background: rgba(197, 160, 89, 0.1);
             border: 1px solid var(--accent-gold);
             border-radius: 20px;
             padding: 40px;
             margin: 60px 0;
             text-align: left;
-            color: #ffffff;
+            color: var(--text-main);
         }
 
         .trivia-question {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             margin-bottom: 25px;
-            color: var(--accent-gold);
+            color: var(--text-main);
         }
 
         .trivia-options {
@@ -177,10 +177,10 @@
             background: none;
             border: none;
             padding: 0;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(26, 26, 26, 0.6);
             font-family: 'Outfit', sans-serif;
             font-size: 1rem;
-            font-weight: 400;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: left;
@@ -192,17 +192,17 @@
         }
 
         .trivia-option.correct {
-            color: var(--accent-gold) !important;
-            font-weight: 500;
+            color: var(--text-main) !important;
+            font-weight: bold;
         }
 
         .trivia-option.incorrect-reveal {
-            color: rgba(255, 255, 255, 0.2) !important;
+            color: rgba(26, 26, 26, 0.2) !important;
         }
 
         .trivia-option.incorrect-choice {
             text-decoration: line-through;
-            color: rgba(255, 255, 255, 0.2) !important;
+            color: rgba(26, 26, 26, 0.2) !important;
         }
 
         .trivia-feedback {
@@ -224,7 +224,7 @@
         .footer-nav {
             margin-top: 80px;
             padding: 40px 0;
-            border-top: 1px solid rgba(10, 20, 29, 0.1);
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
             display: flex;
             justify-content: center;
             gap: 30px;
@@ -358,23 +358,29 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
+        <div class="branding-header" style="text-align: center; margin-bottom: 40px;">
+            <a href="index.html">
+                <img src="redpetalsredpistils.png" alt="Attico con Terrazzo" class="branding-logo" style="width: 100px;">
+            </a>
+        </div>
         <h1>Trasporti</h1>
 
         <div class="mode">
             <h2>Arrivo dall'Aeroporto di Fiumicino (FCO)</h2>
             <p>
-                <strong><a href="https://maps.app.goo.gl/9ZHfe9Z4ZnyzYmRj7" target="_blank">Taxi Ufficiale</a>:</strong> Seguite
+                <strong><a href="https://www.adr.it/web/aeroporti-di-roma-en/pax-fco-taxi" target="_blank">Taxi Ufficiale</a>:</strong>
+                Seguite
                 esclusivamente i cartelli per i taxi bianchi ufficiali. La tariffa è fissa
-                a **€55** per il centro storico.
+                a €55 per il centro storico.
                 Confermate "Tariffa fissa, cinquantacinque?" prima di salire.
             </p>
             <p>
                 <strong><a
-                        href="https://www.italiarail.com/pages/routes/rome-fiumicino-airport-to-florence?utm_term=italy%20train&utm_campaign=Italy-Train-USA&utm_source=google&utm_medium=cpc&gad_source=1&gad_campaignid=22858472791&gbraid=0AAAAADwosrD6_d9k2V9wFtmWP408-DMI1&gclid=CjwKCAiAkvDMBhBMEiwAnUA9BQ-EhS810PXFDLxv5C8JKMRoLhONyM3R-6Ii1nObSsh_MHMQcCJqkBoCvR8QAvD_BwE"
+                        href="https://www.trenitalia.com/it.html"
                         target="_blank">Treno Regionale FL1</a>:</strong> Un'ottima alternativa è il treno FL1 fino alla
                 <a href="https://www.google.com/maps/search/?api=1&query=Stazione+Trastevere+Rome" target="_blank">Stazione
                     Trastevere</a>
-                (€8), seguito dal <strong>Tram 8</strong> (€1.50) fino alla fermata Arenula/Cairoli. Questa opzione evita la folla
+                (€8), seguito dal Tram 8 (€1.50) fino alla fermata Arenula/Cairoli. Questa opzione evita la folla
                 di Termini.
             </p>
         </div>
@@ -384,7 +390,7 @@
                 L'Attico si trova in una posizione invidiabile. Il <strong><a
                         href="https://direzionemuseiroma.cultura.gov.it/en/pantheon/" target="_blank">Pantheon</a></strong>,
                 <a href="https://www.google.com/maps/search/?api=1&query=Piazza+Navona+Rome" target="_blank">Piazza Navona</a>, e il
-                <a href="https://maps.app.goo.gl/t7J5avqJKTHFqsVf8" target="_blank">Ghetto Ebraico</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Ghetto+Ebraico+Rome" target="_blank">Ghetto Ebraico</a>
                 sono tutti a meno di 10-15 minuti di cammino. Consigliamo scarpe eleganti ma comode per i sampietrini romani.
             </p>
         </div>
@@ -392,7 +398,8 @@
         <div class="mode">
             <h2>Collegamenti con Roma Termini</h2>
             <p>
-                Il modo più rapido per raggiungere la stazione Termini è l'<strong><a href="https://maps.app.goo.gl/MiBSyDuX4NJR2kQF9"
+                Il modo più rapido per raggiungere la stazione Termini è l'<strong><a
+                        href="https://www.google.com/maps/search/?api=1&query=Bus+40+Express+Stop+Argentina+Rome"
                         target="_blank">Autobus 40 Express</a></strong> da
                 <a href="https://www.google.com/maps/search/?api=1&query=Corso+Vittorio+Emanuele+II+Rome" target="_blank">Corso
                     Vittorio Emanuele II</a>.
